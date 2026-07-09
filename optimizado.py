@@ -20,9 +20,9 @@ def setup_driver():
         exit(1)
 
 # Variables principales
-numpages = 20
-nombres_buscar = ["MARIA","JOSE","ANTONIO","JUAN","FRANCISCO","MANUEL","CARMEN","LUIS","MIGUEL","VICENTE"]
-base = "https://tel.opendi.es/alicante-alacant/elche-elx/"
+numpages = 30
+nombres_buscar = ["MARIA","JOSE","ANTONIO","JUAN","FRANCISCO","MANUEL","CARMEN","DOLORES","LUIS","MIGUEL"]
+base = "https://tel.opendi.es/almeria/almeria/"
 lista_tabla = []
 
 driver = setup_driver()
@@ -70,14 +70,14 @@ for nombre_b in nombres_buscar:
                     "Localidad": localidad
                 })
         else:
-            break   
+            break
 
 driver.quit()
 
 if lista_tabla:
     df = pd.DataFrame(lista_tabla)
     # Creamos un nombre de archivo más sencillo o basado en la cantidad de datos
-    nombre_archivo = f"Data_Contactos_{len(nombres_buscar)}_nombres.csv"
+    nombre_archivo = f"Data_Contactos_{len(nombres_buscar)}_nombres_almeria-almeria.csv"
     df.to_csv(nombre_archivo, index=False, encoding='utf-8-sig')
     print(f"Archivo '{nombre_archivo}' guardado correctamente al toque.")
 else:
