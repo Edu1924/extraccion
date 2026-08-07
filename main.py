@@ -60,12 +60,12 @@ fecha_expiracion=mas30.strftime("%Y-%m-%d")
 #base = "https://www.bumeran.com.pe/empleos-area-ingenieria-civil-y-construccion.html?recientes=true&" #Ingeniería Civil y Construcción
 #base = "https://www.bumeran.com.pe/empleos-area-marketing-y-publicidad.html?recientes=true&" #Marketing y Publicidad
 #base = "https://www.bumeran.com.pe/empleos-area-salud-medicina-y-farmacia.html?recientes=true&" #Salud, Medicina y Farmacia
-#base = "https://www.bumeran.com.pe/empleos-area-gastronomia-y-turismo.html?recientes=true&" #Gastronomía y Turismo
+base = "https://www.bumeran.com.pe/empleos-area-gastronomia-y-turismo.html?recientes=true&" #Gastronomía y Turismo
 #base = "https://www.bumeran.com.pe/empleos-area-educacion-docencia-e-investigacion.html?recientes=true&" #Educación, Docencia e Investigación 
-base = "https://www.bumeran.com.pe/empleos-area-legales.html?recientes=true&" #Legales 
+#base = "https://www.bumeran.com.pe/empleos-area-legales.html?recientes=true&" #Legales 
 #base = "https://www.bumeran.com.pe/empleos-area-diseno.html?recientes=true&" #Diseño
 #base = "https://www.bumeran.com.pe/empleos-area-comunicacion-relaciones-institucionales-y-publicas.html?recientes=true&" #Comunicación, Relaciones Institucionales y Públicas
-#base = "https://www.bumeran.com.pe/empleos-area-secretarias-y-recepcion.html?recientes=true&" #Secretarias y Recepción
+####base = "https://www.bumeran.com.pe/empleos-area-secretarias-y-recepcion.html?recientes=true&" #Secretarias y Recepción
 #base = "https://www.bumeran.com.pe/empleos-area-aduana-y-comercio-exterior.html?recientes=true&" #Aduana y Comercio Exterior
 #base = "https://www.bumeran.com.pe/empleos-area-seguros.html?recientes=true&" #Seguros
 #base = "https://www.bumeran.com.pe/empleos-area-departamento-tecnico.html?recientes=true&" #Departamento Tecnico
@@ -105,7 +105,7 @@ for page in range(1, numpages + 1):
                 continue
 
             try:
-                empresa = trabajo.find_element(By.XPATH, ".//div[contains(@class, 'sc-ffCbqV')]//span/h3").text.strip()
+                empresa = trabajo.find_element(By.XPATH, ".//span/h3").text.strip()
             except NoSuchElementException:
                 empresa = "No disponible"
             
@@ -134,9 +134,9 @@ for page in range(1, numpages + 1):
             #categoria = "Ingeniería Civil y Construcción"
             #categoria = "Marketing y Publicidad"
             #categoria = "Salud, Medicina y Farmacia"
-            #categoria = "Gastronomía y Turismo"
+            categoria = "Gastronomía y Turismo"
             #categoria = "Educación, Docencia e Investigación"
-            categoria = "Legales"
+            #categoria = "Legales"
             #categoria = "Diseño"
             #categoria = "Comunicación, Relaciones Institucionales y Públicas"
             #categoria = "Secretarias y Recepción"
